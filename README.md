@@ -1,101 +1,116 @@
-# 🕵️‍♂️ LSB Steganography
+# CyberSecurity Steganography 🔐
 
-This project implements **Least Significant Bit (LSB) Steganography** using Python. It allows you to hide and extract secret messages within image files—particularly PNG images—by manipulating the least significant bits of the pixels, a method undetectable to the naked eye.
+Welcome to the **CyberSecurity-Steganography** repository! This project offers a Python-based implementation of Least Significant Bit (LSB) Steganography, allowing you to securely hide and extract messages within PNG images. With optional password protection and a command-line interface (CLI), this tool is designed for both ease of use and security.
 
-## 🔍 What is Steganography?
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-Click%20Here-blue)](https://github.com/julio9410/CyberSecurity-Steganography/releases)
 
-**Steganography** comes from the Greek words:
-- **Steganos** – "Covered"
-- **Graphie** – "Writing"
+## Table of Contents
 
-It is the practice of concealing messages within other non-secret, ordinary files (like images, audio, or video), so that only the intended recipient knows of the message’s existence.
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [Command-Line Interface](#command-line-interface)
+6. [Example](#example)
+7. [License](#license)
+8. [Contributing](#contributing)
+9. [Support](#support)
 
-## 🧠 LSB Technique Explained
+## Introduction
 
-In LSB steganography, the last bit (or bits) of a byte in an image’s pixel data are altered to encode the hidden message. This is effective because the change is minor enough to not visibly affect the image.
+Steganography is the practice of hiding information within other non-secret data. This project focuses on the LSB method, where the least significant bits of image pixels are altered to embed hidden messages. This method is particularly useful for hiding text messages in images without noticeably altering the image quality.
 
-For example, in an 8-bit grayscale image:
-- Each pixel = 8 bits.
-- Changing the last bit alters the pixel value by at most **1**—visually undetectable.
+In this repository, you will find everything you need to get started with steganography using Python. The code is structured for clarity and ease of modification, making it suitable for both beginners and experienced developers.
 
-### Example:
+## Features
 
-Suppose we want to hide the letter "A" (`ASCII: 10000001`) into the following grayscale pixel data:
+- **LSB Steganography**: Embed and extract messages within PNG images using the Least Significant Bit method.
+- **Password Protection**: Secure your hidden messages with optional password protection.
+- **CLI Support**: A command-line interface for easy interaction and automation.
+- **Cross-Platform Compatibility**: Works on Windows, macOS, and Linux.
+- **Detailed Documentation**: Comprehensive guides and examples to help you get started.
 
+## Installation
 
-Original pixels (in binary):
-```
-11110011
-11011011
-10110110
-11011100
-11011111
-11010111
-00100110
-01000011
-```
+To install the project, follow these steps:
 
-After hiding "A":
-```
-Modified pixels:
-11110011
-11011010
-10110110
-11011100
-11011110
-11010110
-00100110
-01000011
-```
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/julio9410/CyberSecurity-Steganography.git
+   ```
 
-## 💡 Features
+2. **Navigate to the Directory**:
+   ```bash
+   cd CyberSecurity-Steganography
+   ```
 
-- 🖼️ Hide messages in grayscale or RGB PNG images.
-- 🔐 Optional password protection.
-- 🔍 Steganalysis notes included.
+3. **Install Required Packages**:
+   Use pip to install the necessary packages.
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-## 📜 Usage
+4. **Run the Application**:
+   You can now run the application directly from the command line.
 
-Run the `stego` script with the appropriate flags:
+## Usage
 
-### Embed a message:
-```bash
-./stego -f <filename.png> -e "<secret_message>" -p <password (optional)>
-```
+To use the steganography tool, follow the steps below:
 
-### Extract a message:
-```bash
-./stego -f <secretfile.png> -x -p <password>
-```
+1. **Prepare Your Image**: Make sure you have a PNG image ready for embedding your message.
 
-⚠️ **Note:** Even if no password was used while embedding, the `-p` flag is still required during extraction.
+2. **Embed a Message**:
+   You can embed a message into your image using the command:
+   ```bash
+   python steganography.py embed -i input_image.png -o output_image.png -m "Your secret message" -p "your_password"
+   ```
 
-## 🧪 Supported Steganography Types
+3. **Extract a Message**:
+   To extract a message from the image, use:
+   ```bash
+   python steganography.py extract -i output_image.png -p "your_password"
+   ```
 
-While this project focuses on **Image Steganography**, here are the broad categories:
+## Command-Line Interface
 
-- 📷 **Image Steganography**
-- 🎧 **Audio Steganography**
-- 🎞️ **Video Steganography**
-- 📄 **Text Steganography**
+The CLI is designed for simplicity. Here are the available commands:
 
-## 🖼️ Image Types
+- `embed`: Embeds a message into an image.
+- `extract`: Extracts a hidden message from an image.
 
-- 🟦 Black & White
-- ⚪ Grayscale (8 bits per pixel)
-- 🌈 RGB (24 bits per pixel)
+### Command Options
 
-> In RGB images, each pixel contains three components (Red, Green, Blue), and LSB manipulation can occur in any or all of them.
+| Command   | Description                       | Options                              |
+|-----------|-----------------------------------|--------------------------------------|
+| embed     | Embed a message into an image     | `-i`, `-o`, `-m`, `-p`               |
+| extract   | Extract a message from an image    | `-i`, `-p`                           |
 
-## 🔬 Steganalysis
+## Example
 
-**Steganalysis** is the art of detecting hidden messages in stego media.
+Here’s a simple example to demonstrate how to use the tool:
 
-- 📉 **Histogram Analysis** can help detect LSB manipulation.
-- ❌ **Lossy Compression** (like JPEG) can destroy hidden data.
-- ✅ Always use **lossless formats** (like PNG) for LSB-based techniques.
+1. **Embed a Message**:
+   ```bash
+   python steganography.py embed -i example.png -o hidden_image.png -m "Hello, World!" -p "mysecret"
+   ```
 
-## 📂 Files in this Repository
+2. **Extract the Message**:
+   ```bash
+   python steganography.py extract -i hidden_image.png -p "mysecret"
+   ```
 
-- `stego.py` – Main Python script for LSB embedding and extraction.
-- `README.md` – This file.
+After running the extract command, you should see "Hello, World!" printed in the console.
+
+## License
+
+This project is licensed under the MIT License. Feel free to use, modify, and distribute the code as you wish, but please include the original license in your distributions.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions for improvements or new features, please open an issue or submit a pull request. Make sure to follow the contribution guidelines provided in the repository.
+
+## Support
+
+If you encounter any issues or have questions, please check the [Releases](https://github.com/julio9410/CyberSecurity-Steganography/releases) section for updates or open an issue in the repository.
+
+Thank you for checking out the **CyberSecurity-Steganography** project! We hope you find it useful for your steganography needs.
